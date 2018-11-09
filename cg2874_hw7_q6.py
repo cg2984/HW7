@@ -1,39 +1,47 @@
 def intersperse():
-    sen1 = "I am writing words"
-    sen2 = "My name is Clara, i was given it"
+    sen1 = "This is a test"
+    sen2 = "Of the emergency broadcast system."
     lst1 = sen1.split(" ")
     lst2 = sen2.split(" ")
     finalList = []
     count1 = 0
     count2 = 0
     i = 0
-    if len(lst1) > len(lst2):
-        print("List 1 bigger")
-        while count2 < len(lst2): 
-            for i in range(len(lst1)+len(lst2)):
-                if i%2 == 0:
-                    finalList.append(lst1[count1])
-                    count1+=1
-                else:
-                    finalList.append(lst2[count2])
-                    count2+=1
-                print(finalList)
-        for i in range(len(lst1 - count1)):
-            finalList.append(lst1[count1+i])
-    elif len(lst2) > len(lst1):
-        while count1 <= len(lst1): 
-            if i%2 == 0:
-                finalList.append(lst1[count1])
-                count1+=1
-            else:
-                finalList.append(lst2[count2])
-                count2+=1
-                print("Count 1:", count1, "Count 2:", count2,finalList)
+    if len(sen1) > len(sen2):
+        while lst2 != []:
             i+=1
-        for i in range(len(lst2 - count2)):
-            finalList.append(lst2[count2+i])
-    finalString = finalList.join(" ")
+            if i%2 != 0:
+                word = lst1.pop(0)
+                finalList.append(word)
+            else:
+                word = lst2.pop(0)
+                finalList.append(word)
+        for i in range(len(lst1)):
+            finalList.append(lst1[i])
+    elif len(sen2) > len(sen1):
+        while lst1 != []:
+            i+=1
+            if i%2 != 0:
+                word = lst1.pop(0)
+                finalList.append(word)
+            else:
+                word = lst2.pop(0)
+                finalList.append(word)
+        for i in range(len(lst2)):
+            finalList.append(lst2[i])
+    else:
+        for i in range(len(sen1) + len(sen2)):
+            i+=1
+            if i%2 != 0:
+                word = lst1.pop(0)
+                finalList.append(word)
+            else:
+                word = lst2.pop(0)
+                finalList.append(word)
+    finalString = " ".join(finalList)
     return finalString
+    
 def main():
     print(intersperse())
 main()
+
