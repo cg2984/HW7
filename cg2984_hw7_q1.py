@@ -50,5 +50,21 @@ Mystery 3
     main()
    OUTPUT
     [14,12]  
+Mystery 4 
+  This multiplies the letters a, b, and c by 1, 2, 3 so that a prints once, b prints twice, and c prints thrice.
+  These letters are also put in individual indeces. 
+  EXAMPLE
+    def mystery4():
+    acc = []
+    for first in [1, 2, 3]:
+       for second in ["a", "b", "c"]:
+          acc.append(first * second)
+    return acc
+    def main():
+        lst = [6,5,8,7,8]
+        print(mystery3(val))
+    main()
+   OUTPUT
+    [a, bb, ccc]
   
 '''
